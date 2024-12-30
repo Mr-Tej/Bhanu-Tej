@@ -1,0 +1,93 @@
+<html>
+<head>
+<style>
+caption{font-size:40px;
+color:white;
+background-color:tomato;
+border:1px solid tomato;
+border-radius:5px;
+text-transform:uppercase;}
+table { border: 1px solid black; 
+ margin-left: auto; 
+ margin-right: auto; 
+ } 
+ 
+ button { 
+ width: 100%; 
+ padding: 20px 40px; 
+ background-color:tomato; 
+ color: white; 
+ font-size: 24px; 
+ font-weight: bold; 
+ border: none; 
+ border-radius: 5px; 
+ } 
+ 
+ input[type="text"] { 
+ padding: 20px 30px; 
+ font-size: 24px; 
+ font-weight: bold; 
+ border-radius: 5px; 
+ border: 2px solid tomato; 
+ }
+</style>
+</head>
+<body>
+<script>
+function clr()
+{
+ document.getElementById('calc').value=""
+}
+function calc()
+{
+var k;
+k=eval(document.getElementById('calc').value)
+document.getElementById('calc').value=k
+}
+function rem()
+{
+s=document.getElementById("calc").value 
+s= s.substr(0,s.length-1)
+document.getElementById('calc').value=s
+}
+function show(a)
+{
+document.getElementById('calc').value+=a
+}
+</script>
+
+
+<table>
+<caption align="top">calculator</caption>
+<tr>
+<td colspan="3"><input type="text" id="calc"> </td>
+<td><button onclick="clr()">AC</button>
+</td>
+</tr>
+<tr>
+<td><button onclick="show('1')">1</button></td>
+<td><button onclick="show('2')">2</button></td>
+<td><button onclick="show('3')">3</button></td>
+<td><button onclick="show('+')">+</button></td>
+</tr>
+<tr>
+<td><button onclick="show('4')">4</button></td>
+<td><button onclick="show('5')">5</button></td>
+<td><button onclick="show('6')">6</button></td>
+<td><button onclick="show('-')">-</button></td>
+</tr>
+<tr>
+<td><button onclick="show('7')">7</button></td>
+<td><button onclick="show('8')">8</button></td>
+<td><button onclick="show('9')">9</button></td>
+<td><button onclick="show('*')">X</button></td>
+</tr>
+<tr>
+<td><button onclick="show('0')">0</button></td>
+<td><button onclick="show('/')">/</button></td>
+<td><button onclick="rem()"><--</button></td>
+<td><button onclick="calc()">=</button>
+</tr>
+</table>
+</body>
+</html>
